@@ -1,0 +1,17 @@
+.container-flex {
+  height: 100vh;
+}
+
+body {
+  background-color: #c0c0c0;
+}
+
+thead {
+  background-color: #f7b35f;
+  color: #7c4400;
+}
+
+tbody {
+  background-color: white;
+  color: #7c4400;
+}
