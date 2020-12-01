@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       const { UserBiodata, UserHistory } = models
 
       User.hasOne(UserBiodata, { foreignKey: 'id' })
-      User.hasOne(UserHistory, { foreignKey: 'id' })
+      User.hasMany(UserHistory, { foreignKey: 'id' })
     }
   }
 

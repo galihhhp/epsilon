@@ -15,6 +15,16 @@ class PostController {
     )
   }
 
+  static getCompChoice = (req, res) => {
+    let compChoice = ''
+    const choice = Math.random();
+    if (choice <= 1 / 3) compChoice = 'rock';
+    if (choice > 1 / 3 && choice <= 2 / 3) compChoice = 'paper';
+    if (choice > 2 / 3) compChoice = 'scissor';
+
+    res.send(compChoice)
+  }
+
   static getIndexView = (req, res) => {
     res.render('posts/index')
   }

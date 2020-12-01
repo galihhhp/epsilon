@@ -4,7 +4,7 @@ class UserController {
   static get = (req, res) => User.findAll().then(
     (users) => res.status(200).json(users)
   ).catch(
-    (err) => res.status(400).send({ msg: err })
+    (err) => res.status(400).json({ msg: err })
   )
 
   static getById = (req, res) => {
@@ -14,7 +14,7 @@ class UserController {
         where: { id }
       })
       .then((user) => res.status(200).json(user))
-      .catch((err) => res.status(400).send({ msg: err }))
+      .catch((err) => res.status(400).json({ msg: err }))
   }
 
   static getAll = (req, res) => {
@@ -50,7 +50,7 @@ class UserController {
         password
       })
       .then((user) => res.status(200).json(user))
-      .catch((err) => res.status(400).send({ msg: err }))
+      .catch((err) => res.status(400).json({ msg: err }))
   }
 
   static createAll = (req, res) => {
@@ -77,8 +77,8 @@ class UserController {
           city
         })
       }).then((user) => res.status(200).json(user))
-      // .then((user) => res.status(200).send(user))
-      .catch((err) => res.status(400).send(err))
+      // .then((user) => res.status(200).json(user))
+      .catch((err) => res.status(400).json(err))
   }
 
   static update = (req, res) => {

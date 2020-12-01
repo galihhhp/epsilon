@@ -7,14 +7,17 @@ module.exports = {
         unique: true,
         allowNull: false
       },
-      win: {
-        type: Sequelize.INTEGER
+      playerChoice: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
-      lose: {
-        type: Sequelize.INTEGER
+      opponentChoice: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
-      draw: {
-        type: Sequelize.INTEGER
+      result: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       userId: {
         type: Sequelize.UUID,
