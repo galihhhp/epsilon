@@ -6,17 +6,18 @@ const router = express.Router()
 
 router.get('/', ViewController.getHomeView)
 router.get('/dashboard', ViewController.getDashboardView)
-router.get('/details', ViewController.getDetailsView)
+router.get('/biodata', ViewController.getDetailsView)
 router.get('/history', ViewController.getHistoryView)
-router.get('/alldetails', ViewController.getAllDetailsView)
+router.get('/allbiodata', ViewController.getAllDetailsView)
 
 // LOGIN
-router.get('/admin', ViewController.getAdminLoginView)
+router.get('/login/admin', ViewController.getAdminLoginView)
+router.get('/login/player', ViewController.getPlayerLoginView)
 
 // FORMS
 router.get('/createUser', ViewController.getUserFormsView)
 router.get('/editUser', ViewController.getEditUserFormsView)
-router.get('/createDetail', ViewController.getDetailFormsView)
+router.get('/createBiodata', ViewController.getDetailFormsView)
 
 // GAME
 router.get('/game', GameController.getIndexView)

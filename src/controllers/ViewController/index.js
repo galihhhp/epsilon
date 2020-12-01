@@ -1,5 +1,4 @@
 import {get, getById } from '../UserController'
-import admin from '../../data/userLogin.json'
 import fetch from 'node-fetch'
 import { json } from 'express'
 
@@ -49,9 +48,11 @@ class ViewController {
   }
 
   static getAdminLoginView = (req, res) => {
-    res.render('loginAdmin', {
-      admins: admin
-    })
+    res.render('loginAdmin')
+  }
+
+  static getPlayerLoginView = (req, res) => {
+    res.render('loginUser')
   }
 
   static getUserFormsView = (req, res) => {

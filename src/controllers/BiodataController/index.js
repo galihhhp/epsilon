@@ -4,7 +4,7 @@ class UserBiodataController {
   static get = (req, res) => UserBiodata.findAll().then(
     (bios) => res.status(200).json(bios)
   ).catch(
-    (err) => res.status(400).send({ msg: err })
+    (err) => res.status(400).json({ msg: err })
   )
 
   static getById = (req, res) => {
@@ -14,7 +14,7 @@ class UserBiodataController {
         where: { id }
       })
       .then((bio) => res.status(200).json(bio))
-      .catch((err) => res.status(400).send({ msg: err }))
+      .catch((err) => res.status(400).json({ msg: err }))
   }
 
   static create = (req, res) => {
@@ -29,7 +29,7 @@ class UserBiodataController {
         userId
       })
       .then((bios) => res.status(200).json(bios))
-      .catch((err) => res.status(400).send({ msg: err }))
+      .catch((err) => res.status(400).json({ msg: err }))
   }
 
   static update = (req, res) => {

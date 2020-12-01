@@ -3,6 +3,7 @@ import UserController from '../../controllers/UserController'
 import BiodataController from '../../controllers/BiodataController'
 import HistoryController from '../../controllers/HistoryController'
 import GameController from '../../controllers/GameController'
+import AdminController from '../../controllers/AdminController'
 
 const router = express.Router()
 
@@ -27,7 +28,15 @@ router.post('/histories/:id', HistoryController.create)
 router.patch('/histories/:id', HistoryController.update)
 router.delete('/histories/:id', HistoryController.delete)
 
+router.get('/admin', AdminController.get)
+router.get('/admin/:id', AdminController.getById)
+router.post('/admin', AdminController.create)
+router.patch('/admin/:id', AdminController.update)
+router.delete('/admin/del/all', AdminController.deleteAll)
+router.delete('/admin/:id', AdminController.delete)
+
 router.get('/history', GameController.getHistory)
+router.get('/compChoice', GameController.getCompChoice)
 router.post('/history', GameController.createHistory)
 router.delete('/history', GameController.deleteHistory)
 

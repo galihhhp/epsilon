@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       const { User } = models
 
-      UserHistory.belongsTo(User, { foreignKey: 'id' })
+      UserHistory.belongsTo(User, { foreignKey: 'userId' })
     }
   }
 
@@ -15,9 +15,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
     },
-    win: DataTypes.INTEGER,
-    lose: DataTypes.INTEGER,
-    draw: DataTypes.INTEGER,
+    playerChoice: DataTypes.STRING,
+    opponentChoice: DataTypes.STRING,
+    result: DataTypes.STRING,
     userId: DataTypes.UUID
   }, {
     sequelize,
